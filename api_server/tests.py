@@ -203,7 +203,7 @@ class PatchTest(TestCase):
         response = self.client.patch(url, self.dataPoint, content_type='application/json')
 
         self.assertEqual(response.status_code, self.requiredStatus)
-    
+
     def testPatchTypeWrongToken(self):
         self.requiredStatus = status.HTTP_403_FORBIDDEN
         self.token = 'test'
