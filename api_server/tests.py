@@ -50,7 +50,7 @@ class PostTest(TestCase):
 
     def testPostTypeNoToken(self):
         self.requiredStatus = status.HTTP_403_FORBIDDEN
-        
+
         url = '/api/points/types/add/'
         response = self.client.post(url, self.dataType)
 
@@ -69,7 +69,7 @@ class PostTest(TestCase):
     def testPostTypeWrongToken(self):
         self.requiredStatus = status.HTTP_403_FORBIDDEN
         self.token = 'test'
-        
+
         url = '/api/points/types/add/'
         response = self.client.post(url, self.dataType, HTTP_AUTHORIZATION=self.token)
 
